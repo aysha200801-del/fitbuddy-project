@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}FitBuddy{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            Fit<span>Buddy</span>
+        </div>
+
+        <nav class="nav-text">
+            <a href="/">Home</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="/view-all-users">Admin</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="/docs">API Docs</a>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+
+</html>

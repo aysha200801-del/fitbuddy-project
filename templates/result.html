@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Your Fitness Plan - FitBuddy{% endblock %}
+
+{% block content %}
+
+<section class="plan-hero">
+    <div class="plan-overlay"></div>
+
+    <div class="plan-hero-content">
+        <span class="plan-label">PERSONALIZED FITNESS PLAN</span>
+
+        <h1>Hello, <span>{{ user.username }}</span> 👋</h1>
+
+        <div class="plan-info">
+            <span>🎯 {{ user.goal }}</span>
+            <span>⚡ {{ user.intensity }} intensity</span>
+            <span>⚖️ {{ user.weight }} kg</span>
+        </div>
+    </div>
+</section>
+
+<section class="plan-page">
+
+    <div class="plan-heading">
+        <div>
+            <span class="section-label">YOUR AI GENERATED PLAN</span>
+            <h2>7-Day Workout Plan</h2>
+            <p>A personalized workout plan generated specially for you.</p>
+        </div>
+
+        <a href="/" class="new-plan-btn">＋ New Plan</a>
+    </div>
+
+    <div class="workout-card">
+        <div class="card-header">
+            <div class="card-icon">🏋️</div>
+            <div>
+                <h3>Weekly Workout Schedule</h3>
+                <p>Follow your plan consistently for better results.</p>
+            </div>
+        </div>
+
+        <div class="plan-content">
+            {{ workout_plan | replace("### ", "") | replace("## ", "") | replace("# ", "") | replace("**", "") }}
+        </div>
+    </div>
+
+    <div class="bottom-actions">
+        <a href="/" class="secondary-btn">← Create Another Plan</a>
+        <a href="/view-all-users" class="secondary-btn">View Users →</a>
+    </div>
+
+</section>
+
+{% endblock %}
